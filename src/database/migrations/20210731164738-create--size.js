@@ -9,13 +9,17 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
+      description: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       created_at: {
         type: Sequelize.DATE,
       },
       updated_at: {
         type: Sequelize.DATE,
       },
-      status:{
+      status: {
         type: Sequelize.INTEGER,
         defaultValue: 1
       }

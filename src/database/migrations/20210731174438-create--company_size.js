@@ -3,30 +3,36 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.createTable("companies_sizes", {
-      id_company:{
+      id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+      },
+      id_company: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{model:'companies',key:'id'},
-        onUpdate:'CASCADE',
-        onDelete:'CASCADE'
+        references: { model: 'companies', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
-      id_sub_category:{
+      id_sub_category: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{model:'sub_categories',key:'id'},
-        onUpdate:'CASCADE',
-        onDelete:'CASCADE'
+        references: { model: 'sub_categories', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
-      id_size:{
+      id_size: {
         type: Sequelize.INTEGER,
-        references:{model:'sizes',key:'id'},
-        onUpdate:'CASCADE',
-        onDelete:'CASCADE'
+        references: { model: 'sizes', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
-      pieces : {
+      pieces: {
         type: Sequelize.INTEGER,
       },
-      flavors :{
+      flavors: {
         type: Sequelize.INTEGER,
       },
       created_at: {
@@ -35,7 +41,7 @@ module.exports = {
       updated_at: {
         type: Sequelize.DATE,
       },
-      status:{
+      status: {
         type: Sequelize.INTEGER,
         defaultValue: 1
       }

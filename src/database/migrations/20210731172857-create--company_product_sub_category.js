@@ -9,34 +9,34 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      id_company:{
+      id_company: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{model:'companies',key:'id'},
-        onUpdate:'CASCADE',
-        onDelete:'CASCADE'
+        references: { model: 'companies', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
-      id_product_sub_category:{
+      id_product_sub_category: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{model:'products_sub_categories',key:'id'},
-        onUpdate:'CASCADE',
-        onDelete:'CASCADE'
+        references: { model: 'products_sub_categories', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
-      id_size:{
+      id_size: {
         type: Sequelize.INTEGER,
-        references:{model:'sizes',key:'id'},
-        onUpdate:'CASCADE',
-        onDelete:'CASCADE'
+        references: { model: 'sizes', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       description: {
         type: Sequelize.STRING,
       },
-      price:{
-        type:Sequelize.DOUBLE,
+      price: {
+        type: Sequelize.DOUBLE,
       },
-      available:{
-        type:Sequelize.INTEGER,
+      available: {
+        type: Sequelize.INTEGER,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -44,7 +44,7 @@ module.exports = {
       updated_at: {
         type: Sequelize.DATE,
       },
-      status:{
+      status: {
         type: Sequelize.INTEGER,
         defaultValue: 1
       }

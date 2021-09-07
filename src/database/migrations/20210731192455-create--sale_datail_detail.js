@@ -12,19 +12,19 @@ module.exports = {
       id_sale_datail: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{model:'sales_details',key:'id'},
-        onUpdate:'CASCADE',
-        onDelete:'CASCADE'
+        references: { model: 'sales_details', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       id_product_company: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{model:'products_companies',key:'id'},
-        onUpdate:'CASCADE',
-        onDelete:'CASCADE'
+        references: { model: 'products_companies', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
-      price:{
-        type:Sequelize.DOUBLE,
+      price: {
+        type: Sequelize.DOUBLE,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -32,7 +32,7 @@ module.exports = {
       updated_at: {
         type: Sequelize.DATE,
       },
-      status:{
+      status: {
         type: Sequelize.INTEGER,
         defaultValue: 1
       }

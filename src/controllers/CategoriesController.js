@@ -1,12 +1,12 @@
-const { roles } = require("../models");
+const { categories } = require("../models");
 
 module.exports = {
 
   async store(req, res) {
     const { description } = req.body;
     try {
-      const roleCreated = await roles.create({ description });
-      return res.json(roleCreated);
+      const categoryCreated = await categories.create({ description });
+      return res.json(categoryCreated);
     } catch (e) {
       console.log(e);
       return res.json(e);
@@ -15,8 +15,8 @@ module.exports = {
 
   async getAll(req, res) {
     try {
-      const allRoles = await roles.findAll();
-      return res.json(allRoles);
+      const allCategories = await categories.findAll();
+      return res.json(allCategories);
     } catch (e) {
       console.log(e);
       return res.json(e);

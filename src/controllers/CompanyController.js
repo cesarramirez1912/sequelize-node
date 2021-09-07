@@ -1,17 +1,18 @@
-const { Company } = require("../models");
+const { company, users } = require("../models");
+
 
 module.exports = {
 
   async store(req, res) {
     const { description, email, phone, tables } = req.body;
     try {
-      const company = await Company.create({
+      const companyCreate = await company.create({
         description,
         email,
         phone,
         tables,
       });
-      return res.json(company);
+      return res.json(companyCreate);
     } catch (e) {
       console.log(e);
       return res.json(e);
@@ -20,8 +21,14 @@ module.exports = {
 
   async getAll(req, res) {
     try {
-      const company = await Company.findAll();
-      return res.json(company);
+      const companies = await company.findAll({
+        include: [
+          {
+            model: users,
+            as: 'users',
+          }]
+      });
+      return res.json(companies);
     } catch (e) {
       console.log(e);
       return res.json(e);
