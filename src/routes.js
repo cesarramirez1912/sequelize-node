@@ -13,14 +13,12 @@ const ProductsSubCategoriesController = require("./controllers/ProductsSubCatego
 const ProductsCompaniesController = require("./controllers/ProductsCompaniesController");
 const ClientsController = require("./controllers/ClientsController");
 const SalesController = require("./controllers/SalesController");
-//const companyController = new CompanyController(instance);
 
 
 routes.get('/', (req, res) => {
     return res.json({ hello: 'world' })
 })
 
-//routes.post('/companies',CompanyController.getCourses);
 routes.post('/companies', CompanyController.store);
 routes.get('/companies', CompanyController.getAll);
 routes.post('/users', UsersController.store);

@@ -3,9 +3,9 @@ const { company, clients, sales } = require("../models");
 
 module.exports = {
   async store(req, res) {
-    const { id_client, id_company, date, table } = req.body;
+    const { id_client, id_company, date, table, description, total, discount, money } = req.body;
     try {
-      const saleCreated = await sales.create({ id_client, id_company, date, table });
+      const saleCreated = await sales.create({ id_client, id_company, date, table, description, total, discount, money });
       return res.json(saleCreated);
     } catch (e) {
       console.log(e);
